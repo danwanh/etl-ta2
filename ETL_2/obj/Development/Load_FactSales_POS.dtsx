@@ -20,6 +20,8 @@
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{E5AF8574-2D19-4FCE-BC12-84AB0F31342C}"
       DTS:ObjectName="POS_csv">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::DataFolder] + "\\POS.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -29,7 +31,7 @@
           DTS:RowDelimiter="_x000D__x000A_"
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\LE HO DAN ANH\Downloads\Data\POS.csv">
+          DTS:ConnectionString="C:\Users\LE HO DAN ANH\source\repos\ETL_2\etl-ta2\data\POS.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -4577,89 +4579,89 @@
               startId="Package\DFT - Fact POS\03 Parse Quantity.Outputs[Derived Column Error Output]" />
             <path
               refId="Package\DFT - Fact POS.Paths[Derived Column Output16]"
-              endId="Package\DFT - Fact POS\36 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\35 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output15]"
-              endId="Package\DFT - Fact POS\24 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\23 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output14]"
-              endId="Package\DFT - Fact POS\27 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\26 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output13]"
-              endId="Package\DFT - Fact POS\18 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\17 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output12]"
-              endId="Package\DFT - Fact POS\29 Net.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\28 Gross.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output11]"
-              endId="Package\DFT - Fact POS\30 Net &lt; 0.Inputs[Conditional Split Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\29 Net.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output10]"
-              endId="Package\DFT - Fact POS\32 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\31 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output8]"
-              endId="Package\DFT - Fact POS\06 Quantity &lt; 0.Inputs[Conditional Split Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\03 Parse Quantity.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output9]"
-              endId="Package\DFT - Fact POS\21 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\20 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output6]"
-              endId="Package\DFT - Fact POS\03 Parse Quantity.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\02 Normalize.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output5]"
-              endId="Package\DFT - Fact POS\05 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\04 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output4]"
-              endId="Package\DFT - Fact POS\15 DateKey.Inputs[Derived Column Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\12 Parse Date.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output3]"
-              endId="Package\DFT - Fact POS\16 Thieu ma khach.Inputs[Conditional Split Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\15 DateKey.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output2]"
-              endId="Package\DFT - Fact POS\14 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\13 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output1]"
-              endId="Package\DFT - Fact POS\11 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DFT - Fact POS\10 Reject reason.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output]"
               endId="Package\DFT - Fact POS\12 Parse Date.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\DFT - Fact POS\09 Parse PriceDiscount.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT - Fact POS.Paths[Derived Column Output7]"
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output15]"
+              endId="Package\DFT - Fact POS\11 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\10 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output14]"
+              endId="Package\DFT - Fact POS\14 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\13 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output13]"
+              endId="Package\DFT - Fact POS\16 Thieu ma khach.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\15 DateKey.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output12]"
+              endId="Package\DFT - Fact POS\15 DateKey.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\12 Parse Date.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output11]"
+              endId="Package\DFT - Fact POS\05 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\04 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output10]"
+              endId="Package\DFT - Fact POS\03 Parse Quantity.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\02 Normalize.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output8]"
               endId="Package\DFT - Fact POS\08 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\DFT - Fact POS\07 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output9]"
+              endId="Package\DFT - Fact POS\06 Quantity &lt; 0.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\03 Parse Quantity.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output6]"
+              endId="Package\DFT - Fact POS\21 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\20 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output5]"
+              endId="Package\DFT - Fact POS\32 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\31 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output4]"
+              endId="Package\DFT - Fact POS\30 Net &lt; 0.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\29 Net.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output3]"
+              endId="Package\DFT - Fact POS\29 Net.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\28 Gross.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output2]"
+              endId="Package\DFT - Fact POS\18 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\17 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output1]"
+              endId="Package\DFT - Fact POS\27 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\26 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output]"
+              endId="Package\DFT - Fact POS\24 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\23 Reject reason.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Derived Column Output7]"
+              endId="Package\DFT - Fact POS\36 Reject -&gt; ETL_RejectedRows.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Fact POS\35 Reject reason.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - Fact POS.Paths[Flat File Source Output]"
               endId="Package\DFT - Fact POS\02 Normalize.Inputs[Derived Column Input]"
@@ -4697,19 +4699,19 @@
               startId="Package\DFT - Fact POS\25 Lookup DimProduct.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\DFT - Fact POS.Paths[Reject1]"
+              endId="Package\DFT - Fact POS\20 Reject reason.Inputs[Derived Column Input]"
+              name="Reject"
+              startId="Package\DFT - Fact POS\19 Thieu ma SP.Outputs[Reject]" />
+            <path
+              refId="Package\DFT - Fact POS.Paths[Reject2]"
               endId="Package\DFT - Fact POS\31 Reject reason.Inputs[Derived Column Input]"
               name="Reject"
               startId="Package\DFT - Fact POS\30 Net &lt; 0.Outputs[Reject]" />
             <path
-              refId="Package\DFT - Fact POS.Paths[Reject2]"
+              refId="Package\DFT - Fact POS.Paths[Reject]"
               endId="Package\DFT - Fact POS\07 Reject reason.Inputs[Derived Column Input]"
               name="Reject"
               startId="Package\DFT - Fact POS\06 Quantity &lt; 0.Outputs[Reject]" />
-            <path
-              refId="Package\DFT - Fact POS.Paths[Reject]"
-              endId="Package\DFT - Fact POS\20 Reject reason.Inputs[Derived Column Input]"
-              name="Reject"
-              startId="Package\DFT - Fact POS\19 Thieu ma SP.Outputs[Reject]" />
             <path
               refId="Package\DFT - Fact POS.Paths[Reject3]"
               endId="Package\DFT - Fact POS\17 Reject reason.Inputs[Derived Column Input]"

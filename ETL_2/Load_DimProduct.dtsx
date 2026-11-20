@@ -11,8 +11,8 @@
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Load_DimProduct"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{8544A198-4C5B-45FE-B688-6412D2E550B0}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{75D1449A-C78A-47A8-A4D0-1CE6B00D5F66}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -57,13 +57,13 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT - Load DimProduct\01 Source master"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="01 Source master"
+              refId="Package\DFT - Load DimProduct\Insert dong moi"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert dong moi"
               usesDispositions="true"
-              version="7">
+              version="4">
               <properties>
                 <property
                   dataType="System.Int32"
@@ -72,7 +72,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[dbo].[DimProduct]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -81,11 +81,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ProductCode, ProductName, Category FROM dbo.ProductMaster</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -98,111 +94,106 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">2</property>
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
                 <property
                   dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - Load DimProduct\01 Source master.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[RetailPlus_Legacy]"
-                  connectionManagerRefId="Package.ConnectionManagers[RetailPlus_Legacy]"
+                  refId="Package\DFT - Load DimProduct\Insert dong moi.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Retail_DDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[Retail_DDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
-              <outputs>
-                <output
-                  refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductCode]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].ExternalColumns[ProductCode]"
-                      length="10"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductCode]"
-                      name="ProductCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
-                      length="100"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductName]"
-                      name="ProductName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[Category]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].ExternalColumns[Category]"
-                      length="50"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[Category]"
-                      name="Category"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
+              <inputs>
+                <input
+                  refId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].Columns[ProductCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ProductCode"
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductCode]"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductCode]" />
+                    <inputColumn
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].Columns[Category]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[Category]" />
+                  </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].ExternalColumns[ProductCode]"
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductCode]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="ProductCode" />
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                       dataType="wstr"
                       length="100"
                       name="ProductName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
                       dataType="wstr"
                       length="50"
                       name="Category" />
                   </externalMetadataColumns>
-                </output>
+                </input>
+              </inputs>
+              <outputs>
                 <output
-                  refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output]"
+                  refId="Package\DFT - Load DimProduct\Insert dong moi.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
                   isErrorOut="true"
-                  name="OLE DB Source Error Output">
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[ProductCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[ProductCode]"
-                      name="ProductCode" />
-                    <outputColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[ProductName]"
-                      dataType="wstr"
-                      length="100"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[ProductName]"
-                      name="ProductName" />
-                    <outputColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[Category]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[Category]"
-                      name="Category" />
-                    <outputColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Load DimProduct\Insert dong moi.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Load DimProduct\Insert dong moi.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Load DimProduct\Insert dong moi.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -211,11 +202,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - Load DimProduct\02 Lookup dim da co"
+              refId="Package\DFT - Load DimProduct\Lookup dim da co"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="02 Lookup dim da co"
+              name="Lookup dim da co"
               usesDispositions="true"
               version="6">
               <properties>
@@ -278,7 +269,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Connections[OleDbConnection]"
+                  refId="Package\DFT - Load DimProduct\Lookup dim da co.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Retail_DDS]"
                   connectionManagerRefId="Package.ConnectionManagers[Retail_DDS]"
                   description="Connection manager used to access lookup data."
@@ -286,16 +277,16 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Inputs[Lookup Input]"
+                  refId="Package\DFT - Load DimProduct\Lookup dim da co.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Inputs[Lookup Input].Columns[ProductCode]"
+                      refId="Package\DFT - Load DimProduct\Lookup dim da co.Inputs[Lookup Input].Columns[ProductCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="10"
                       cachedName="ProductCode"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductCode]">
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductCode]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -313,17 +304,17 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output]"
+                  refId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\DFT - Load DimProduct\02 Lookup dim da co.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DFT - Load DimProduct\Lookup dim da co.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExKey]"
+                      refId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExKey]"
+                      lineageId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExKey]"
                       name="ExKey"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -334,11 +325,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExName]"
+                      refId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Copy Column"
                       length="100"
-                      lineageId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExName]"
+                      lineageId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExName]"
                       name="ExName"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -349,11 +340,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]"
+                      refId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Copy Column"
                       length="50"
-                      lineageId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]"
+                      lineageId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]"
                       name="ExAttr"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -367,30 +358,30 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup No Match Output]"
+                  refId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\DFT - Load DimProduct\02 Lookup dim da co.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DFT - Load DimProduct\Lookup dim da co.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Error Output]"
+                  refId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\DFT - Load DimProduct\02 Lookup dim da co.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DFT - Load DimProduct\Lookup dim da co.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -399,13 +390,13 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - Load DimProduct\03 Insert dong moi"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="03 Insert dong moi"
+              refId="Package\DFT - Load DimProduct\Source master"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source master"
               usesDispositions="true"
-              version="4">
+              version="7">
               <properties>
                 <property
                   dataType="System.Int32"
@@ -414,7 +405,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimProduct]</property>
+                  name="OpenRowset"></property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -423,7 +414,11 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ProductCode, ProductName, Category FROM dbo.ProductMaster</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -436,106 +431,111 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - Load DimProduct\03 Insert dong moi.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Retail_DDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[Retail_DDS]"
+                  refId="Package\DFT - Load DimProduct\Source master.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[RetailPlus_Legacy]"
+                  connectionManagerRefId="Package.ConnectionManagers[RetailPlus_Legacy]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
-              <inputs>
-                <input
-                  refId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].Columns[ProductCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="ProductCode"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductCode]"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductCode]" />
-                    <inputColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].Columns[ProductName]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="ProductName"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductName]" />
-                    <inputColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].Columns[Category]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Category"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[Category]" />
-                  </inputColumns>
+              <outputs>
+                <output
+                  refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].ExternalColumns[ProductCode]"
+                      length="10"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductCode]"
+                      name="ProductCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="100"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[Category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      length="50"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
-                      dataType="i4"
-                      name="ProductKey" />
-                    <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductCode]"
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].ExternalColumns[ProductCode]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="ProductCode" />
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
                       dataType="wstr"
                       length="100"
                       name="ProductName" />
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].ExternalColumns[Category]"
                       dataType="wstr"
                       length="50"
                       name="Category" />
                   </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
+                </output>
                 <output
-                  refId="Package\DFT - Load DimProduct\03 Insert dong moi.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
+                  refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input]">
+                  name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[ProductCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[ProductCode]"
+                      name="ProductCode" />
+                    <outputColumn
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\03 Insert dong moi.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\03 Insert dong moi.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\03 Insert dong moi.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -544,62 +544,62 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh"
+              refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="04 Thay doi ten hoac thuoc tinh"
+              name="Thay doi ten hoac thuoc tinh"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]"
+                  refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]"
                   description="Input to the Conditional Split Transformation"
                   name="Conditional Split Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input].Columns[ProductName]"
+                      refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input].Columns[ProductName]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="ProductName"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductName]" />
                     <inputColumn
-                      refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input].Columns[ExName]"
+                      refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input].Columns[ExName]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="ExName"
-                      lineageId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExName]" />
+                      lineageId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExName]" />
                     <inputColumn
-                      refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input].Columns[Category]"
+                      refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input].Columns[Category]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Category"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[Category]" />
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[Category]" />
                     <inputColumn
-                      refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input].Columns[ExAttr]"
+                      refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input].Columns[ExAttr]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="ExAttr"
-                      lineageId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]" />
+                      lineageId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Outputs[Case]"
+                  refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Outputs[Case]"
                   description="Output 1 of the Conditional Split Transformation"
                   errorOrTruncationOperation="Computation"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
                   name="Case"
-                  synchronousInputId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]"
+                  synchronousInputId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]"
                   truncationRowDisposition="FailComponent">
                   <properties>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductName]} != #{Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExName]} || (ISNULL(#{Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[Category]}) ? !ISNULL(#{Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]}) : (ISNULL(#{Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]}) ? TRUE : #{Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[Category]} != #{Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]}))</property>
+                      name="Expression">#{Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductName]} != #{Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExName]} || (ISNULL(#{Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[Category]}) ? !ISNULL(#{Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]}) : (ISNULL(#{Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]}) ? TRUE : #{Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[Category]} != #{Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExAttr]}))</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -614,11 +614,11 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Default Output]"
+                  refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Default Output]"
                   description="Default Output of the Conditional Split Transformation"
                   exclusionGroup="1"
                   name="Conditional Split Default Output"
-                  synchronousInputId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]">
+                  synchronousInputId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]">
                   <properties>
                     <property
                       dataType="System.Boolean"
@@ -627,23 +627,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output]"
+                  refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output]"
                   description="Error Output of the Conditional Split Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Conditional Split Error Output"
-                  synchronousInputId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]">
+                  synchronousInputId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -652,11 +652,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - Load DimProduct\05 Update dong thay doi"
+              refId="Package\DFT - Load DimProduct\Update dong thay doi"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="05 Update dong thay doi"
+              name="Update dong thay doi"
               usesDispositions="true"
               version="2">
               <properties>
@@ -677,7 +677,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Connections[OleDbConnection]"
+                  refId="Package\DFT - Load DimProduct\Update dong thay doi.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Retail_DDS]"
                   connectionManagerRefId="Package.ConnectionManagers[Retail_DDS]"
                   description="The OLE DB runtime connection used to access the database."
@@ -685,37 +685,37 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input]"
+                  refId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].Columns[ProductName]"
+                      refId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].Columns[ProductName]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="ProductName"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[ProductName]" />
                     <inputColumn
-                      refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].Columns[Category]"
+                      refId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].Columns[Category]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Category"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output].Columns[Category]" />
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output].Columns[Category]" />
                     <inputColumn
-                      refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].Columns[ExKey]"
+                      refId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].Columns[ExKey]"
                       cachedDataType="i4"
                       cachedName="ExKey"
-                      externalMetadataColumnId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output].Columns[ExKey]" />
+                      externalMetadataColumnId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output].Columns[ExKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="wstr"
                       length="100"
                       name="Param_0">
@@ -727,7 +727,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="wstr"
                       length="50"
                       name="Param_1">
@@ -739,7 +739,7 @@
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="i4"
                       name="Param_2">
                       <properties>
@@ -754,29 +754,29 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Outputs[OLE DB Command Output]"
+                  refId="Package\DFT - Load DimProduct\Update dong thay doi.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Outputs[OLE DB Command Error Output]"
+                  refId="Package\DFT - Load DimProduct\Update dong thay doi.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - Load DimProduct\Update dong thay doi.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\05 Update dong thay doi.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - Load DimProduct\Update dong thay doi.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - Load DimProduct\05 Update dong thay doi.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - Load DimProduct\Update dong thay doi.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - Load DimProduct\05 Update dong thay doi.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - Load DimProduct\Update dong thay doi.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -788,24 +788,24 @@
           <paths>
             <path
               refId="Package\DFT - Load DimProduct.Paths[Case]"
-              endId="Package\DFT - Load DimProduct\05 Update dong thay doi.Inputs[OLE DB Command Input]"
+              endId="Package\DFT - Load DimProduct\Update dong thay doi.Inputs[OLE DB Command Input]"
               name="Case"
-              startId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Outputs[Case]" />
+              startId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Outputs[Case]" />
             <path
               refId="Package\DFT - Load DimProduct.Paths[Lookup Match Output]"
-              endId="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]"
+              endId="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh.Inputs[Conditional Split Input]"
               name="Lookup Match Output"
-              startId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup Match Output]" />
+              startId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT - Load DimProduct.Paths[Lookup No Match Output]"
-              endId="Package\DFT - Load DimProduct\03 Insert dong moi.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT - Load DimProduct\Insert dong moi.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
-              startId="Package\DFT - Load DimProduct\02 Lookup dim da co.Outputs[Lookup No Match Output]" />
+              startId="Package\DFT - Load DimProduct\Lookup dim da co.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\DFT - Load DimProduct.Paths[OLE DB Source Output]"
-              endId="Package\DFT - Load DimProduct\02 Lookup dim da co.Inputs[Lookup Input]"
+              endId="Package\DFT - Load DimProduct\Lookup dim da co.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\DFT - Load DimProduct\01 Source master.Outputs[OLE DB Source Output]" />
+              startId="Package\DFT - Load DimProduct\Source master.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -836,102 +836,152 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\DFT - Load DimProduct\02 Lookup dim da co"
-          TopLeft="NaN,NaN" />
+          Size="161.6,41.6"
+          Id="Package\DFT - Load DimProduct\Lookup dim da co"
+          TopLeft="45.7142858115994,158.294117508308" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\DFT - Load DimProduct\04 Thay doi ten hoac thuoc tinh"
-          TopLeft="NaN,NaN" />
+          Size="213.6,41.6"
+          Id="Package\DFT - Load DimProduct\Thay doi ten hoac thuoc tinh"
+          TopLeft="407.857143725364,82.5882352217259" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\DFT - Load DimProduct\05 Update dong thay doi"
-          TopLeft="NaN,NaN" />
+          Size="180,41.6"
+          Id="Package\DFT - Load DimProduct\Update dong thay doi"
+          TopLeft="451.428572389544,258.470588008735" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\DFT - Load DimProduct\03 Insert dong moi"
-          TopLeft="NaN,NaN" />
+          Size="153.6,41.6"
+          Id="Package\DFT - Load DimProduct\Insert dong moi"
+          TopLeft="126.428571697705,318.882352661664" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\DFT - Load DimProduct\01 Source master"
-          TopLeft="NaN,NaN" />
+          Size="146.4,41.6"
+          Id="Package\DFT - Load DimProduct\Source master"
+          TopLeft="19.2857143267685,50.4705881910547" />
         <EdgeLayout
           Id="Package\DFT - Load DimProduct.Paths[OLE DB Source Output]"
-          TopLeft="NaN,NaN">
+          TopLeft="92.4857143267685,92.0705881910547">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="8.42857148483097,66.2235293172532"
               Start="0,0"
-              End="0,0">
+              End="8.42857148483097,58.7235293172532">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.3445674178975" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.3445674178975"
+                    Point2="0,39.3445674178975"
+                    Point3="4,39.3445674178975" />
+                  <mssgle:LineSegment
+                    End="4.42857148483097,39.3445674178975" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.42857148483097,39.3445674178975"
+                    Point2="8.42857148483097,39.3445674178975"
+                    Point3="8.42857148483097,43.3445674178975" />
+                  <mssgle:LineSegment
+                    End="8.42857148483097,58.7235293172532" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Load DimProduct.Paths[Lookup No Match Output]"
-          TopLeft="NaN,NaN">
+          TopLeft="126.514285811599,199.894117508308">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="76.7142858861053,118.988235153356"
               Start="0,0"
-              End="0,0">
+              End="76.7142858861053,111.488235153356">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.4941175766779" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.4941175766779"
+                    Point2="0,59.4941175766779"
+                    Point3="4,59.4941175766779" />
+                  <mssgle:LineSegment
+                    End="72.7142858861053,59.4941175766779" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.7142858861053,59.4941175766779"
+                    Point2="76.7142858861053,59.4941175766779"
+                    Point3="76.7142858861053,63.4941175766779" />
+                  <mssgle:LineSegment
+                    End="76.7142858861053,111.488235153356" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-17.4492437756974,64.4941175766779,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Load DimProduct.Paths[Lookup Match Output]"
-          TopLeft="NaN,NaN">
+          TopLeft="152.114285811599,158.294117508308">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="328.276191247098,-34.105882286582"
               Start="0,0"
-              End="0,0">
+              End="328.276191247098,-26.605882286582">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-13.1032274604366" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-13.1032274604366"
+                    Point2="0,-17.1032274604366"
+                    Point3="4,-17.1032274604366" />
+                  <mssgle:LineSegment
+                    End="324.276191247098,-17.1032274604366" />
+                  <mssgle:CubicBezierSegment
+                    Point1="324.276191247098,-17.1032274604366"
+                    Point2="328.276191247098,-17.1032274604366"
+                    Point3="328.276191247098,-21.1032274604366" />
+                  <mssgle:LineSegment
+                    End="328.276191247098,-26.605882286582" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="115.946708904799,-12.1032274604366,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Load DimProduct.Paths[Case]"
-          TopLeft="NaN,NaN">
+          TopLeft="545.176191390787,124.188235221726">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,134.282352787009"
               Start="0,0"
-              End="0,0">
+              End="0,126.782352787009">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,126.782352787009" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-11.1988671875,58.6143209247544,22.397734375,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

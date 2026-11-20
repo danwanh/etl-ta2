@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATjLrjUf38kCTEp+zZesBlgAAAAACAAAAAAAQZgAAAAEAACAAAADvD3X4q7F001owlrQzRokBwB4WgjGqgKRRdTuar9TbpQAAAAAOgAAAAAIAACAAAAAt1hsQBYbPx0kzmDgN53ZEh6rhb726jXwOOtzY1WTsQJAAAADHEH3RDtL+hz4am4FamT82eW5o4ivvWWZJmUGMXXd3T5xRClKpjppEXxgsa/xOO+G1AaWXT+nPm+mAHXkFMBJnP+Ir8vNfrY8ck1OJbTJ+gM2lu8TdV8DTYvjSXwMxR8ZuLMR5AC/0nL/nwjMF6k3q1gBZwfJlYZlXvGcs5zMBuZStK5TtDuBs1iipymmAqDdAAAAAXolXOOUT5eEbGGhd2COS+8B5PuAKwypaRNuvTgx2GqKbWk0gVccM9nhkmUKxbLtHQGULAtXuSblJVPVBelRZCw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATjLrjUf38kCTEp+zZesBlgAAAAACAAAAAAAQZgAAAAEAACAAAABQ+7O8R3Hsb4KTbsHdXBqYhjv+K0Ut2xkmnpAH5VC78QAAAAAOgAAAAAIAACAAAABLKX2sMxS6IfTL2MdBJIeaoESQccx+AV8IxoDqr538X5AAAADuBqiYLTlXei44BwRwFjMImCqiUrZWQneu4PdwQxtF6oFFQcs9G7loA3rsSbwSw8ua6Z2GJ4gIp/V8uPOQ9rp7GE+y/I47/dzIOAV9UVKwzxa7LJJQXUdTjRgnrgnWDiRSerGPXJSucOpJ6JHyNiwDa1X9fjPUo8j8AYRy+8QzTTgl2lXhtGVbAR77PLNYxQpAAAAALRIv3Lz3TGQZqep2maGcWqQti2ILCzB4CwfE61uk2KWMDZ6O9SSNXlcNhqxtOmH/46hTF2CcfcorC29Q8tz/Xw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -48,10 +48,10 @@
                 <SSIS:Property SSIS:Name="Name">Master</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1AB095C3-7CC0-41DC-A82A-B95B62935A31}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2680AA47-D76B-4950-9D68-9025C5F0E7BC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">Chay toan bo ETL: DimDate &gt; DimCustomer &gt; DimProduct &gt; Fact ERP &gt; POS &gt; Online. FullReload=1 de xoa FactSales truoc khi nap.</SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
@@ -227,10 +227,10 @@
                 <SSIS:Property SSIS:Name="Name">Load_DimDate</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BAFEB80D-E997-446B-AB8B-0568DA1684BF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{832F47B0-EB8E-46B3-8085-D28333830B01}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">Sinh DimDate 2020-2030 (idempotent: chi them ngay chua co).</SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
@@ -392,10 +392,10 @@
                 <SSIS:Property SSIS:Name="Name">Load_DimCustomer</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{309581B1-2C2B-4107-91A5-FC8599DA6078}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DE87BA59-561E-4591-AB0A-B3192E9696C1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">Incremental SCD1: insert khach moi, update khi doi ten/thanh pho. Nguon CustomerMaster.</SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
@@ -705,10 +705,10 @@
                 <SSIS:Property SSIS:Name="Name">Load_DimProduct</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8544A198-4C5B-45FE-B688-6412D2E550B0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{75D1449A-C78A-47A8-A4D0-1CE6B00D5F66}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">Incremental SCD1: insert san pham moi, update khi doi ten/nhom. Nguon ProductMaster.</SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
@@ -1018,10 +1018,10 @@
                 <SSIS:Property SSIS:Name="Name">Load_FactSales_ERP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A8F7573E-FAC4-467C-9E1C-63D5D61DA77D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B4665650-190B-43F7-AC2A-DEE0C864DCC6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">Incremental theo TransactionNo. Nguon ERP_Sales (SQL Server). Lam sach trong SSIS, dong loi vao ETL_RejectedRows.</SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
@@ -1331,10 +1331,10 @@
                 <SSIS:Property SSIS:Name="Name">Load_FactSales_POS</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3C211CD9-EE93-41B5-A5AD-10CC090CD62E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3D38624C-3DBE-400D-B162-D1182117EA77}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">Incremental theo TransactionNo. Nguon POS.csv. Lam sach trong SSIS, dong loi vao ETL_RejectedRows.</SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
@@ -1398,21 +1398,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.POS_csv.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\LE HO DAN ANH\Downloads\Data\POS.csv</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.POS_csv.DataRowsToSkip">
@@ -1693,10 +1678,10 @@
                 <SSIS:Property SSIS:Name="Name">Load_FactSales_Online</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3B48E292-BC93-4BBE-A62B-6EEC490745BF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{077D9F0F-D8FD-4984-A562-9FA94EC957F6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">Incremental theo TransactionNo. Nguon Online.xlsx. Lam sach trong SSIS, dong loi vao ETL_RejectedRows.</SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
@@ -1717,21 +1702,6 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Online_xlsx.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\LE HO DAN ANH\Downloads\Data\Online.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Online_xlsx.ExcelFilePath">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -1743,7 +1713,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\LE HO DAN ANH\Downloads\Data\Online.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\LE HO DAN ANH\source\repos\ETL_2\etl-ta2\data\Online.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1816,7 +1786,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\LE HO DAN ANH\Downloads\Data\Online.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\LE HO DAN ANH\source\repos\ETL_2\etl-ta2\data\Online.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

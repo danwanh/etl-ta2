@@ -11,8 +11,8 @@
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Load_DimDate"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{BAFEB80D-E997-446B-AB8B-0568DA1684BF}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{832F47B0-EB8E-46B3-8085-D28333830B01}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,12 +32,12 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\SQL - Nap DimDate"
+      DTS:refId="Package\Nap DimDate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:DTSID="{3822ABEE-B38A-402F-9477-46D898E1BE2B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="SQL - Nap DimDate"
+      DTS:ObjectName="Nap DimDate"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -61,7 +61,7 @@
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="170.4,41.6"
-          Id="Package\SQL - Nap DimDate"
+          Id="Package\Nap DimDate"
           TopLeft="116.928571665774,219.617646871141" />
       </GraphLayout>
     </LayoutInfo>

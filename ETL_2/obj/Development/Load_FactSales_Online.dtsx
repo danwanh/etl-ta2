@@ -21,11 +21,13 @@
       DTS:CreationName="EXCEL"
       DTS:DTSID="{28E167C7-1D19-4207-B817-D8D83528740B}"
       DTS:ObjectName="Online_xlsx">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + @[$Project::DataFolder] + "\\Online.xlsx;Extended Properties=\"EXCEL 12.0 XML;HDR=YES\";"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\LE HO DAN ANH\Downloads\Data\Online.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\LE HO DAN ANH\source\repos\ETL_2\etl-ta2\data\Online.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
