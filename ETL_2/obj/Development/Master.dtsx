@@ -1,0 +1,398 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/20/2026 8:36:50 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC"
+  DTS:CreatorName="PC\LE HO DAN ANH"
+  DTS:Description="Chay toan bo ETL: DimDate &gt; DimCustomer &gt; DimProduct &gt; Fact ERP &gt; POS &gt; Online. FullReload=1 de xoa FactSales truoc khi nap."
+  DTS:DTSID="{839B0B18-0FF9-499F-95E1-DC1EB23EB123}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Master"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{1AB095C3-7CC0-41DC-A82A-B95B62935A31}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Retail_DDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FD93E62F-EAE4-40AA-8D3B-9766226D7641}"
+      DTS:ObjectName="Retail_DDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Retail_DDS;Provider=MSOLEDBSQL;Integrated Security=SSPI;Trust Server Certificate=true;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{C244451E-668C-47C5-B59A-3950FAD6FEBA}"
+      DTS:ObjectName="FullReload">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\EPT - Load_DimCustomer"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:DTSID="{F8671F9F-B0B1-4D35-8E3D-4DDC0B7EEC56}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EPT - Load_DimCustomer"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Load_DimCustomer.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EPT - Load_DimDate"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:DTSID="{C3E4FC6D-64C1-42CD-82CC-7DEFEF374112}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EPT - Load_DimDate"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Load_DimDate.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EPT - Load_DimProduct"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:DTSID="{AE16589F-2C88-4A9A-A90A-C66B9A3B12AF}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EPT - Load_DimProduct"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Load_DimProduct.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EPT - Load_FactSales_ERP"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:DTSID="{BC61601A-2FC4-4C75-9510-656112259880}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EPT - Load_FactSales_ERP"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Load_FactSales_ERP.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EPT - Load_FactSales_Online"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:DTSID="{5A0EB0A7-C337-4515-849E-26160B352A2A}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EPT - Load_FactSales_Online"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Load_FactSales_Online.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EPT - Load_FactSales_POS"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:DTSID="{798EC35F-94FB-44A0-AF35-F39EE1CD9BA7}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EPT - Load_FactSales_POS"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Load_FactSales_POS.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL - Full reload xoa FactSales va Reject"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Disabled="True"
+      DTS:DTSID="{E677509B-AEEC-43CF-975A-54FE09B00776}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL - Full reload xoa FactSales va Reject"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Disable">@[$Package::FullReload] == 0</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FD93E62F-EAE4-40AA-8D3B-9766226D7641}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.ETL_RejectedRows;&#xA;TRUNCATE TABLE dbo.FactSales;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{1043FA36-1DB3-4D83-A2BA-68E4EEFB6216\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{1043FA36-1DB3-4D83-A2BA-68E4EEFB6216}"
+      DTS:From="Package\EPT - Load_FactSales_POS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{1043FA36-1DB3-4D83-A2BA-68E4EEFB6216}"
+      DTS:To="Package\EPT - Load_FactSales_Online" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{13633470-0259-43FF-B162-DC6839EBF874\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{13633470-0259-43FF-B162-DC6839EBF874}"
+      DTS:From="Package\EPT - Load_DimDate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{13633470-0259-43FF-B162-DC6839EBF874}"
+      DTS:To="Package\EPT - Load_DimCustomer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{6C3D937C-7988-4A04-AF15-4F2565104CAA\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{6C3D937C-7988-4A04-AF15-4F2565104CAA}"
+      DTS:From="Package\EPT - Load_FactSales_ERP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{6C3D937C-7988-4A04-AF15-4F2565104CAA}"
+      DTS:To="Package\EPT - Load_FactSales_POS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{9E7DAE41-3092-46C0-B39D-8D3E4C52E47F\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{9E7DAE41-3092-46C0-B39D-8D3E4C52E47F}"
+      DTS:From="Package\EPT - Load_DimProduct"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{9E7DAE41-3092-46C0-B39D-8D3E4C52E47F}"
+      DTS:To="Package\EPT - Load_FactSales_ERP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{A7787103-5DE5-4CBB-A261-3A1D78717FE5\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{A7787103-5DE5-4CBB-A261-3A1D78717FE5}"
+      DTS:From="Package\SQL - Full reload xoa FactSales va Reject"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{A7787103-5DE5-4CBB-A261-3A1D78717FE5}"
+      DTS:To="Package\EPT - Load_DimDate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{AAF4C60F-FE16-4AE7-9171-7B4295DEEB97\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{AAF4C60F-FE16-4AE7-9171-7B4295DEEB97}"
+      DTS:From="Package\EPT - Load_DimCustomer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{AAF4C60F-FE16-4AE7-9171-7B4295DEEB97}"
+      DTS:To="Package\EPT - Load_DimProduct" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\EPT - Load_DimCustomer"
+          TopLeft="41.5,208.7" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\EPT - Load_DimDate"
+          TopLeft="53.1,107.1" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\EPT - Load_DimProduct"
+          TopLeft="46.3,310.3" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\EPT - Load_FactSales_ERP"
+          TopLeft="39.1000000000001,411.9" />
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\EPT - Load_FactSales_Online"
+          TopLeft="33.5000000000001,615.1" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\EPT - Load_FactSales_POS"
+          TopLeft="38.7,513.5" />
+        <NodeLayout
+          Size="271.2,41.6"
+          Id="Package\SQL - Full reload xoa FactSales va Reject"
+          TopLeft="15.5000000212874,23.0882352787008" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{1043FA36-1DB3-4D83-A2BA-68E4EEFB6216\}]"
+          TopLeft="141.1,555.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{13633470-0259-43FF-B162-DC6839EBF874\}]"
+          TopLeft="141.1,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{6C3D937C-7988-4A04-AF15-4F2565104CAA\}]"
+          TopLeft="141.1,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000002"
+              Start="0,0"
+              End="0,52.5000000000002">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000002" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{9E7DAE41-3092-46C0-B39D-8D3E4C52E47F\}]"
+          TopLeft="141.1,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{A7787103-5DE5-4CBB-A261-3A1D78717FE5\}]"
+          TopLeft="151.100000021287,64.6882352787008">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.0000000212874,42.411764721299"
+              Start="0,0"
+              End="-10.0000000212874,34.911764721299">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2058823606495" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2058823606495"
+                    Point2="0,21.2058823606495"
+                    Point3="-4,21.2058823606495" />
+                  <mssgle:LineSegment
+                    End="-6.00000002128738,21.2058823606495" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.00000002128738,21.2058823606495"
+                    Point2="-10.0000000212874,21.2058823606495"
+                    Point3="-10.0000000212874,25.2058823606495" />
+                  <mssgle:LineSegment
+                    End="-10.0000000212874,34.911764721299" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{AAF4C60F-FE16-4AE7-9171-7B4295DEEB97\}]"
+          TopLeft="141.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
