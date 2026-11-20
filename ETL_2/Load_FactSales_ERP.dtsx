@@ -5150,51 +5150,189 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="120,41.6"
-          Id="Package\Fact ERP"
-          TopLeft="177.728571729636,190.452941103409" />
-        <NodeLayout
-          Size="181.6,41.6"
+          Size="238,41.6"
           Id="Package\Xoa reject cu cua ERP"
-          TopLeft="156.214286035117,88.8529411034086" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{115456C6-9E7F-4E34-8A93-39694E4EF8E7\}]"
-          TopLeft="247.014286035117,130.452941103409">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.28571430548112,60"
-              Start="0,0"
-              End="-9.28571430548112,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="-4,30" />
-                  <mssgle:LineSegment
-                    End="-5.28571430548112,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.28571430548112,30"
-                    Point2="-9.28571430548112,30"
-                    Point3="-9.28571430548112,34" />
-                  <mssgle:LineSegment
-                    End="-9.28571430548112,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="60,30" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Fact ERP"
+          TopLeft="60,120" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Fact ERP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="82" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="221,41.6"
+          Id="Package\Fact ERP\01 Source ERP_Sales"
+          TopLeft="30,20" />
+        <NodeLayout
+          Size="162,41.6"
+          Id="Package\Fact ERP\02 Normalize"
+          TopLeft="30,100" />
+        <NodeLayout
+          Size="238,41.6"
+          Id="Package\Fact ERP\03 Loai don Cancelled"
+          TopLeft="30,180" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\04 Reject reason"
+          TopLeft="390,260" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\05 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,340" />
+        <NodeLayout
+          Size="162,41.6"
+          Id="Package\Fact ERP\06 Thieu gia"
+          TopLeft="30,260" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\07 Reject reason"
+          TopLeft="750,340" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\08 Reject -&gt; ETL_RejectedRows"
+          TopLeft="750,420" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\Fact ERP\09 Parse Quantity"
+          TopLeft="30,340" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\10 Reject reason"
+          TopLeft="390,420" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\11 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,500" />
+        <NodeLayout
+          Size="187,41.6"
+          Id="Package\Fact ERP\12 Quantity &lt; 0"
+          TopLeft="30,420" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\13 Reject reason"
+          TopLeft="750,500" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\14 Reject -&gt; ETL_RejectedRows"
+          TopLeft="750,580" />
+        <NodeLayout
+          Size="247,41.6"
+          Id="Package\Fact ERP\15 Parse PriceDiscount"
+          TopLeft="30,500" />
+        <NodeLayout
+          Size="170,41.6"
+          Id="Package\Fact ERP\16 Parse Date"
+          TopLeft="30,580" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\17 Reject reason"
+          TopLeft="390,660" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\18 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,740" />
+        <NodeLayout
+          Size="150,41.6"
+          Id="Package\Fact ERP\19 DateKey"
+          TopLeft="30,660" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\Fact ERP\20 Thieu ma khach"
+          TopLeft="30,740" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\21 Reject reason"
+          TopLeft="390,820" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\22 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,900" />
+        <NodeLayout
+          Size="179,41.6"
+          Id="Package\Fact ERP\23 Thieu ma SP"
+          TopLeft="30,820" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\24 Reject reason"
+          TopLeft="750,900" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\25 Reject -&gt; ETL_RejectedRows"
+          TopLeft="750,980" />
+        <NodeLayout
+          Size="238,41.6"
+          Id="Package\Fact ERP\26 Lookup DimCustomer"
+          TopLeft="30,900" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\27 Reject reason"
+          TopLeft="390,980" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\28 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,1060" />
+        <NodeLayout
+          Size="230,41.6"
+          Id="Package\Fact ERP\29 Lookup DimProduct"
+          TopLeft="30,980" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\30 Reject reason"
+          TopLeft="750,1060" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\31 Reject -&gt; ETL_RejectedRows"
+          TopLeft="750,1140" />
+        <NodeLayout
+          Size="150,41.6"
+          Id="Package\Fact ERP\32 Gross"
+          TopLeft="30,1060" />
+        <NodeLayout
+          Size="150,41.6"
+          Id="Package\Fact ERP\33 Net"
+          TopLeft="30,1140" />
+        <NodeLayout
+          Size="150,41.6"
+          Id="Package\Fact ERP\34 Net &lt; 0"
+          TopLeft="30,1220" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\35 Reject reason"
+          TopLeft="390,1300" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\36 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,1380" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\37 Lookup trung TransactionNo"
+          TopLeft="30,1300" />
+        <NodeLayout
+          Size="315,41.6"
+          Id="Package\Fact ERP\38 Da nap lan truoc cung nguon"
+          TopLeft="30,1380" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact ERP\39 Reject reason"
+          TopLeft="30,1460" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact ERP\40 Reject -&gt; ETL_RejectedRows"
+          TopLeft="30,1540" />
+        <NodeLayout
+          Size="221,41.6"
+          Id="Package\Fact ERP\41 Insert FactSales"
+          TopLeft="750,1380" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

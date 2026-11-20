@@ -822,11 +822,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="197.6,41.6"
+          Size="247,41.6"
           Id="Package\DFT - Load DimCustomer"
-          TopLeft="106.928571644486,198.97058806571" />
+          TopLeft="60,30" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -834,145 +834,27 @@
     design-time-name="Package\DFT - Load DimCustomer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="10" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\DFT - Load DimCustomer\Lookup dim da co"
-          TopLeft="260.5,107.1" />
-        <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\DFT - Load DimCustomer\Thay doi ten hoac thuoc tinh"
-          TopLeft="285.214285822243,233.935294095527" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\DFT - Load DimCustomer\Update dong thay doi"
-          TopLeft="304.871428685468,395.182352866774" />
-        <NodeLayout
-          Size="153.6,41.6"
+          Size="187,41.6"
           Id="Package\DFT - Load DimCustomer\Insert dong moi"
-          TopLeft="5.50000000000003,208.7" />
+          TopLeft="390,180" />
         <NodeLayout
-          Size="146.4,41.6"
+          Size="196,41.6"
+          Id="Package\DFT - Load DimCustomer\Lookup dim da co"
+          TopLeft="30,100" />
+        <NodeLayout
+          Size="170,41.6"
           Id="Package\DFT - Load DimCustomer\Source master"
-          TopLeft="268.5,5.49999999999995" />
-        <EdgeLayout
-          Id="Package\DFT - Load DimCustomer.Paths[OLE DB Source Output]"
-          TopLeft="341.5,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Load DimCustomer.Paths[Lookup No Match Output]"
-          TopLeft="315.7,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-233.4,60"
-              Start="0,0"
-              End="-233.4,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3529411764706" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.3529411764706"
-                    Point2="0,24.3529411764706"
-                    Point3="-4,24.3529411764706" />
-                  <mssgle:LineSegment
-                    End="-229.4,24.3529411764706" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-229.4,24.3529411764706"
-                    Point2="-233.4,24.3529411764706"
-                    Point3="-233.4,28.3529411764706" />
-                  <mssgle:LineSegment
-                    End="-233.4,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-172.50638671875,29.3529411764706,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Load DimCustomer.Paths[Lookup Match Output]"
-          TopLeft="366.9,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="25.1142858222432,85.2352940955274"
-              Start="0,0"
-              End="25.1142858222432,77.7352940955274">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5955017211258" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5955017211258"
-                    Point2="0,34.5955017211258"
-                    Point3="4,34.5955017211258" />
-                  <mssgle:LineSegment
-                    End="21.1142858222432,34.5955017211258" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.1142858222432,34.5955017211258"
-                    Point2="25.1142858222432,34.5955017211258"
-                    Point3="25.1142858222432,38.5955017211258" />
-                  <mssgle:LineSegment
-                    End="25.1142858222432,77.7352940955274" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.6342438076284,39.5955017211258,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - Load DimCustomer.Paths[Case]"
-          TopLeft="393.442857253856,275.535294095527">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,119.647058771246"
-              Start="0,0"
-              End="0,112.147058771246">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,112.147058771246" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.1988671875,51.2966739168732,22.397734375,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="30,20" />
+        <NodeLayout
+          Size="298,41.6"
+          Id="Package\DFT - Load DimCustomer\Thay doi ten hoac thuoc tinh"
+          TopLeft="30,180" />
+        <NodeLayout
+          Size="230,41.6"
+          Id="Package\DFT - Load DimCustomer\Update dong thay doi"
+          TopLeft="30,260" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>

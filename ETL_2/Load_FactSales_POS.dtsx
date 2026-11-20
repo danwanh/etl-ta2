@@ -4759,51 +4759,173 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Fact POS"
-          TopLeft="194.157143193179,247.041176347924" />
-        <NodeLayout
-          Size="182.4,41.6"
+          Size="238,41.6"
           Id="Package\Xoa reject cu cua POS"
-          TopLeft="172.64285749866,87.3235293400433" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{E22FA0BA-C0F0-49D9-960F-83D5EBA5CFD8\}]"
-          TopLeft="263.84285749866,128.923529340043">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.28571430548115,118.117647007881"
-              Start="0,0"
-              End="-9.28571430548115,110.617647007881">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.0588235039406" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,55.0588235039406"
-                    Point2="0,59.0588235039406"
-                    Point3="-4,59.0588235039406" />
-                  <mssgle:LineSegment
-                    End="-5.28571430548115,59.0588235039406" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.28571430548115,59.0588235039406"
-                    Point2="-9.28571430548115,59.0588235039406"
-                    Point3="-9.28571430548115,63.0588235039406" />
-                  <mssgle:LineSegment
-                    End="-9.28571430548115,110.617647007881" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="60,30" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Fact POS"
+          TopLeft="60,120" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Fact POS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="74" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\01 Source POScsv"
+          TopLeft="30,20" />
+        <NodeLayout
+          Size="162,41.6"
+          Id="Package\Fact POS\02 Normalize"
+          TopLeft="30,100" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\Fact POS\03 Parse Quantity"
+          TopLeft="30,180" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\04 Reject reason"
+          TopLeft="390,260" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\05 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,340" />
+        <NodeLayout
+          Size="187,41.6"
+          Id="Package\Fact POS\06 Quantity &lt; 0"
+          TopLeft="30,260" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\07 Reject reason"
+          TopLeft="750,340" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\08 Reject -&gt; ETL_RejectedRows"
+          TopLeft="750,420" />
+        <NodeLayout
+          Size="247,41.6"
+          Id="Package\Fact POS\09 Parse PriceDiscount"
+          TopLeft="30,340" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\10 Reject reason"
+          TopLeft="390,420" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\11 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,500" />
+        <NodeLayout
+          Size="170,41.6"
+          Id="Package\Fact POS\12 Parse Date"
+          TopLeft="30,420" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\13 Reject reason"
+          TopLeft="750,500" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\14 Reject -&gt; ETL_RejectedRows"
+          TopLeft="750,580" />
+        <NodeLayout
+          Size="150,41.6"
+          Id="Package\Fact POS\15 DateKey"
+          TopLeft="30,500" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\Fact POS\16 Thieu ma khach"
+          TopLeft="30,580" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\17 Reject reason"
+          TopLeft="390,660" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\18 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,740" />
+        <NodeLayout
+          Size="179,41.6"
+          Id="Package\Fact POS\19 Thieu ma SP"
+          TopLeft="30,660" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\20 Reject reason"
+          TopLeft="750,740" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\21 Reject -&gt; ETL_RejectedRows"
+          TopLeft="750,820" />
+        <NodeLayout
+          Size="238,41.6"
+          Id="Package\Fact POS\22 Lookup DimCustomer"
+          TopLeft="30,740" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\23 Reject reason"
+          TopLeft="390,820" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\24 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,900" />
+        <NodeLayout
+          Size="230,41.6"
+          Id="Package\Fact POS\25 Lookup DimProduct"
+          TopLeft="30,820" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\26 Reject reason"
+          TopLeft="750,900" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\27 Reject -&gt; ETL_RejectedRows"
+          TopLeft="750,980" />
+        <NodeLayout
+          Size="150,41.6"
+          Id="Package\Fact POS\28 Gross"
+          TopLeft="30,900" />
+        <NodeLayout
+          Size="150,41.6"
+          Id="Package\Fact POS\29 Net"
+          TopLeft="30,980" />
+        <NodeLayout
+          Size="150,41.6"
+          Id="Package\Fact POS\30 Net &lt; 0"
+          TopLeft="30,1060" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\31 Reject reason"
+          TopLeft="390,1140" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\32 Reject -&gt; ETL_RejectedRows"
+          TopLeft="390,1220" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\33 Lookup trung TransactionNo"
+          TopLeft="30,1140" />
+        <NodeLayout
+          Size="315,41.6"
+          Id="Package\Fact POS\34 Da nap lan truoc cung nguon"
+          TopLeft="30,1220" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Fact POS\35 Reject reason"
+          TopLeft="30,1300" />
+        <NodeLayout
+          Size="306,41.6"
+          Id="Package\Fact POS\36 Reject -&gt; ETL_RejectedRows"
+          TopLeft="30,1380" />
+        <NodeLayout
+          Size="221,41.6"
+          Id="Package\Fact POS\37 Insert FactSales"
+          TopLeft="750,1220" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

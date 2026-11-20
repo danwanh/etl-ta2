@@ -218,179 +218,35 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="14" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\Load_DimCustomer"
-          TopLeft="41.5,208.7" />
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Load_DimDate"
-          TopLeft="53.1,107.1" />
-        <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\Load_DimProduct"
-          TopLeft="46.3,310.3" />
-        <NodeLayout
-          Size="204,41.6"
-          Id="Package\Load_FactSales_ERP"
-          TopLeft="39.1000000000001,411.9" />
-        <NodeLayout
-          Size="215.2,41.6"
-          Id="Package\Load_FactSales_Online"
-          TopLeft="33.5000000000001,615.1" />
-        <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\Load_FactSales_POS"
-          TopLeft="38.7,513.5" />
-        <NodeLayout
-          Size="271.2,41.6"
+          Size="357,41.6"
           Id="Package\Full reload xoa FactSales va Reject"
-          TopLeft="15.5000000212874,23.0882352787008" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{1043FA36-1DB3-4D83-A2BA-68E4EEFB6216\}]"
-          TopLeft="141.1,555.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{13633470-0259-43FF-B162-DC6839EBF874\}]"
-          TopLeft="141.1,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{6C3D937C-7988-4A04-AF15-4F2565104CAA\}]"
-          TopLeft="141.1,453.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000002"
-              Start="0,0"
-              End="0,52.5000000000002">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000002" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{9E7DAE41-3092-46C0-B39D-8D3E4C52E47F\}]"
-          TopLeft="141.1,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{A7787103-5DE5-4CBB-A261-3A1D78717FE5\}]"
-          TopLeft="151.100000021287,64.6882352787008">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-10.0000000212874,42.411764721299"
-              Start="0,0"
-              End="-10.0000000212874,34.911764721299">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.2058823606495" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.2058823606495"
-                    Point2="0,21.2058823606495"
-                    Point3="-4,21.2058823606495" />
-                  <mssgle:LineSegment
-                    End="-6.00000002128738,21.2058823606495" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-6.00000002128738,21.2058823606495"
-                    Point2="-10.0000000212874,21.2058823606495"
-                    Point3="-10.0000000212874,25.2058823606495" />
-                  <mssgle:LineSegment
-                    End="-10.0000000212874,34.911764721299" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[{AAF4C60F-FE16-4AE7-9171-7B4295DEEB97\}]"
-          TopLeft="141.1,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="60,30" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Load_DimDate"
+          TopLeft="60,120" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Load_DimCustomer"
+          TopLeft="60,210" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Load_DimProduct"
+          TopLeft="60,300" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Load_FactSales_ERP"
+          TopLeft="60,390" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Load_FactSales_POS"
+          TopLeft="60,480" />
+        <NodeLayout
+          Size="238,41.6"
+          Id="Package\Load_FactSales_Online"
+          TopLeft="60,570" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
